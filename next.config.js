@@ -9,7 +9,6 @@ const nextConfig = {
     {
       protocol: 'https',
       hostname: process.env.ARTWORK_HOSTNAME_URL,
-      
     },
   ],
 }
