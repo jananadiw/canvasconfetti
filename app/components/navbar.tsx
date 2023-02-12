@@ -8,7 +8,7 @@ import "@/styles/globals.scss";
 export default function NavBar() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center top-0 w-full h-24 mb-24">
+      <div className="flex flex-col justify-center items-center top-0 w-full h-24 mb-24 font-raleway">
         <div className="cursor-pointer mt-16">
           <Image src={ccLogo} alt="logo_cc" width={450} height={100} />
         </div>
