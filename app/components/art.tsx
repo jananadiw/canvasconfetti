@@ -9,7 +9,7 @@ export default function Art({data}: any) {
         src={`https://${process.env.AWS_BUCKET}.s3.ap-northeast-2.amazonaws.com/${key}`}
         alt={`img_${key}`}
         width={500}
-        className="w-full rounded"
+        className="w-full h-full object-cover rounded"
         height={600}
         />
     </main>
