@@ -1,9 +1,11 @@
 import NavBar from '../components/navbar';
+import Footer from '../components/footer'
 
 export default function About() {
     return (
+     <>
+    <NavBar />
         <main>
-            <NavBar />
             <div className="relative font-raleway text-2xl m-80">
             <div className="w-full leading-9 text-center">
             <p>Hi Everyone!👋🏼 <br/>
@@ -20,5 +22,7 @@ export default function About() {
             </div>
             </div>
         </main>
+    <Footer />
+    </>
     )
 }

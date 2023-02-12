@@ -2,6 +2,7 @@ import { s3Client } from "@/lib/s3Client";
 import { ListObjectsCommand } from "@aws-sdk/client-s3";
 import NavBar from './components/navbar';
 import Art from './components/art'
+import Footer from './components/footer'
 
 let artworkKeys: (string | undefined)[] = [];
 
@@ -24,7 +25,7 @@ export default async function Home() {
     <>
     <NavBar />
     <main>
-      <div className="grid grid-cols-3 grid-rows-6 gap-4 mt-60 p-8">
+      <div className="grid grid-cols-3 grid-rows-6 gap-5 mt-56 p-16">
         {allImages.map((item, index) => {
           return (
               <Art key={index} data={item}/>
@@ -32,6 +33,7 @@ export default async function Home() {
         })}
       </div>
     </main>
+    <Footer />
   </>
   )
 }
