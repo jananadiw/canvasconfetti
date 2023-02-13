@@ -4,8 +4,8 @@ import Footer from '../components/footer'
 export default function About() {
     return (
      <>
+    <main>
     <NavBar />
-        <main>
             <div className="relative font-raleway text-2xl m-80">
             <div className="w-full leading-9 text-center">
             <p>Hi Everyone!👋🏼 <br/>
