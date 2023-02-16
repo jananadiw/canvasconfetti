@@ -3,7 +3,6 @@ import { ListObjectsCommand } from "@aws-sdk/client-s3";
 import NavBar from './components/navbar';
 import Art from './components/art'
 import Footer from './components/footer'
-import Link from 'next/link'
 
 let artworkKeys: (string | undefined)[] = [];
 
@@ -27,11 +26,9 @@ export default async function Home() {
     <main>
     <NavBar />
       <div className="grid grid-cols-3 grid-rows-6 gap-5 mt-56 p-16">
-        {allImages.map((item: any, index) => {
+        {allImages.map((item, index) => {
           return (
-              <Link key={index} href={`/${encodeURIComponent(item)}`} >
-              <Art data={item}/>
-              </Link>
+              <Art key={index} data={item}/>
           );
         })}
       </div>
