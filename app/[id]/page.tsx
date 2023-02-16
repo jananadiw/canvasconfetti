@@ -1,3 +1,6 @@
+import NavBar from "../components/navbar";
+import Footer from "../components/footer";
+
 export default function Page({
     params,
     searchParams,
@@ -5,6 +8,16 @@ export default function Page({
     params: { slug: string };
     searchParams?: { [key: string]: string | string[] | undefined };
   }) {
-    return <h1>Artwork Page </h1>;
+    return (
+      <>
+      <main>
+      <NavBar />
+        <div>
+          {params.slug}
+        </div>
+      <Footer />
+      </main>
+    </>
+  );
   }
   

@@ -27,11 +27,11 @@ export default async function Home() {
     <main>
     <NavBar />
       <div className="grid grid-cols-3 grid-rows-6 gap-5 mt-56 p-16">
-        {allImages.map((item, index) => {
+        {allImages.map((item: any, index) => {
           return (
-            // <Link key={index} href={`/${encodeURIComponent(item)}`} >
-              <Art key={index} data={item}/>
-            // </Link>
+              <Link key={index} href={`/${encodeURIComponent(item)}`} >
+              <Art data={item}/>
+              </Link>
           );
         })}
       </div>
