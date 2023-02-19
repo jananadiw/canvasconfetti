@@ -23,7 +23,7 @@ export default async function Home() {
     <>
     <main>
     {/* <NavBar /> */}
-      <div className="grid grid-cols-3 grid-rows-6 gap-5 mx-auto p-16">
+      <div className="grid grid-cols-3 grid-rows-6 gap-5 mx-auto px-64">
         {allImages.map((item, index) => {
           return (
               <Art key={index} data={item}/>
