@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import Link from "next/link";
-import ccLogo from "public/cc_logo.png";
-import Image from "next/image";
-import "@/styles/globals.scss";
+import Link from 'next/link';
+import ccLogo from 'public/cc_logo.png';
+import Image from 'next/image';
+import '@/styles/globals.scss';
 
 export default function NavBar() {
   return (
@@ -25,11 +25,11 @@ export default function NavBar() {
             </Link>
           </div>
       </div> */}
-       <div className="flex flex-col mx-auto justify-center items-center w-full my-16 font-raleway">
+      <div className="flex flex-col mx-auto justify-center items-center w-full my-16 font-raleway">
         <div className="cursor-pointer">
-        <Link href="/">
-          <Image src={ccLogo} alt="logo_cc" width={300} height={100} />
-        </Link>
+          <Link href="/">
+            <Image src={ccLogo} alt="logo_cc" width={300} height={100} />
+          </Link>
         </div>
         <div className="uppercase mt-2 mx-auto">
           <div className="flex flex-wrap justify-between items-center">

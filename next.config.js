@@ -4,14 +4,14 @@ const nextConfig = {
     appDir: true,
   },
   reactStrictMode: true,
-  images: { 
+  images: {
     remotePatterns: [
-    {
-      protocol: 'https',
-      hostname: process.env.ARTWORK_HOSTNAME_URL,
-    },
-  ],
-}
-}
+      {
+        protocol: 'https',
+        hostname: process.env.ARTWORK_HOSTNAME_URL,
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
