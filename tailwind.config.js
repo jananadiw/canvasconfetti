@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         raleway: ['Raleway', 'sans-serif'],
       },
+      colors: {
+        'light-beige': '#FDF8F0',
+      },
     },
   },
   plugins: [],
