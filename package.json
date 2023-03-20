@@ -13,10 +13,12 @@
     "@next/font": "13.1.6",
     "@supabase/supabase-js": "^2.11.0",
     "eslint-config-next": "13.1.6",
+    "graphql": "^16.6.0",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.58.0"
+    "sass": "^1.58.0",
+    "urql": "^3.0.4"
   },
   "devDependencies": {
     "@types/node": "^18.14.1",
