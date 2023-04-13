@@ -2,47 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { createClient, useQuery } from 'urql'
-
-// Prepare API key and Authorization header
-const headers = {
-  apikey: process.env.SUPABASE_ANON_KEY,
-  authorization: `Bearer ${process.env.SUPABASE_ANON_KEY}`,
-}
-
-// Create GraphQL client
-// See: https://formidable.com/open-source/urql/docs/basics/react-preact/#setting-up-the-client
-const client = createClient({
-  url: `${process.env.SUPABASE_URL}/graphql/v1`,
-})
-
-// Prepare our GraphQL query
-const ArtworksQuery = `
-  query {
-    artworks {
-      edges {
-        node {
-          id
-          title
-        }
-      }
-    }
-  }
-`
-
-// Query for the data (React)
-const [result, reexecuteQuery] = useQuery({
-  query: ArtworksQuery,
-})
-
-// Read the result
-const { data, fetching, error } = result
-console.log('data', result);
-
 
 // TODO: Give a proper type to data.
-export default function Art({ data }: any) {
-  let key = data;
+export default function Art({ props }: any) {
+  let key = props;
   const artworkName = key.replace(/\.[^/.]+$/, "");
   return (
     <main>

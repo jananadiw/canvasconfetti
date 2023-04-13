@@ -11,6 +11,7 @@ const nextConfig = {
         hostname: process.env.ARTWORK_HOSTNAME_URL,
       },
     ],
+    domains: ['s3.ap-northeast-2.amazonaws.com'],
   },
 };
 

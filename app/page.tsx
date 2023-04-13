@@ -1,6 +1,9 @@
+'use client'
+
 import { s3Client } from '@/lib/s3Client';
 import { ListObjectsCommand } from '@aws-sdk/client-s3';
 import Art from './components/art';
+import { createClient, useQuery } from 'urql'
 
 let artworkKeys: (string | undefined)[] = [];
 
@@ -18,6 +21,40 @@ async function fetchArtwork() {
 }
 
 export default async function Home() {
+    // Prepare API key and Authorization header
+const headers: HeadersInit = {
+  'apikey': process.env.SUPABASE_ANON_KEY ?? '',
+  'Authorization': `Bearer ${process.env.SUPABASE_ANON_KEY ?? ''}`,
+}
+
+const client = createClient({
+  url: `${process.env.SUPABASE_URL}/graphql/v1`,
+  fetchOptions: {
+    headers: headers
+  }
+})
+
+const ArtworksQuery = `
+  query {
+    artworks {
+      edges {
+        node {
+          id
+          caption
+          url
+          name
+        }
+      }
+    }
+  }
+`
+
+const [result, reexecuteQuery] = useQuery({
+  query: ArtworksQuery,
+})
+
+const { data, fetching, error } = result;
+console.log('data', data);
   const allImages = await fetchArtwork();
   return (
     <>
@@ -25,7 +62,7 @@ export default async function Home() {
         {/* <NavBar /> */}
         <div className="grid grid-cols-3 grid-rows-6 gap-5 mx-auto px-64">
           {allImages.map((item, index) => {
-            return <Art key={index} data={item} />;
+            return <Art key={index} props={item} />;
           })}
         </div>
       </main>
