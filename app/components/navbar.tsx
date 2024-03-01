@@ -5,18 +5,29 @@ import { useEffect, useState } from 'react';
 import ccLogo from 'public/cc_logo.png';
 import Image from 'next/image';
 import '@/styles/globals.scss';
-import { useScrollPosition } from '@/hooks/useScrollPosition';
+// import { useScrollPosition } from '@/hooks/useScrollPosition';
+import { useRouter } from 'next/router';
 
 export default function NavBar() {
+  const router = useRouter();
 
-  const scrollPosition = useScrollPosition();
+  const goToHomePage = () => {
+    router.push('/');
+  };
+
+  useEffect(() => {
+    // Check if router is ready before using it
+    if (router.isReady) {
+      // You can safely use the router here
+    }
+  }, [router.isReady]);
 
   const classNames = (...classes: any) => {
     return classes.filter(Boolean).join(' ');
-  }
+  };
   return (
     <>
-    {/* <div className={classNames(scrollPosition > 0) ? 'bg-white sticky top-0 z-10 transition-all': 'hidden'}>
+      {/* <div className={classNames(scrollPosition > 0) ? 'bg-white sticky top-0 z-10 transition-all': 'hidden'}>
       <div className='flex justify-center items-center w-96 mb-24 font-raleway mx-auto my-16 p-12' >
         <div className="flex-none float-right bg-white">
               <a href="//opensea.io/collection/canvas-confetti" target="_blank" rel="noreferrer">
@@ -35,11 +46,9 @@ export default function NavBar() {
           </div>
       </div>
       </div> */}
-      <div className='flex flex-col mx-auto justify-center items-center w-full my-16 p-12 font-raleway bg-white sticky top-0 z-10'>
-        <div className="cursor-pointer">
-          <Link href="/">
-            <Image src={ccLogo} alt="logo_cc" width={400} height={100} />
-          </Link>
+      <div className="flex flex-col mx-auto justify-center items-center w-full my-16 p-12 font-raleway bg-white sticky top-0 z-10">
+        <div className="cursor-pointer" onClick={goToHomePage}>
+          <Image src={ccLogo} alt="logo_cc" width={400} height={100} />
         </div>
         <div className="uppercase mt-2 mx-auto">
           <div className="flex flex-wrap justify-between items-center">
