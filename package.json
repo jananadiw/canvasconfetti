@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.264.0",
-    "@next/font": "13.1.6",
     "@supabase/supabase-js": "^2.11.0",
     "eslint-config-next": "13.1.6",
     "graphql": "^16.6.0",
