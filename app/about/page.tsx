@@ -31,18 +31,24 @@ export default function About() {
             <div className="mt-2 flex justify-center">
               <div className="flex flex-row items-center w-48">
                 <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
-                  <Link href="https://www.instagram.com/canvas_confetti/">
-                    <Image src={instagramIcon} height={24} width={24} alt="instagramIcon" target="_blank" />
+                  <Link href="https://www.instagram.com/canvas_confetti/" passHref>
+                    <a target="_blank">
+                      <Image src={instagramIcon} height={24} width={24} alt="instagramIcon" />
+                    </a>
                   </Link>
                 </div>
                 <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
-                  <Link href="https://www.behance.net/jayw25">
-                    <Image src={behanceIcon} height={24} width={24} alt="behanceIcon" target="_blank" />
+                  <Link href="https://www.behance.net/jayw25" passHref>
+                    <a target="_blank">
+                      <Image src={behanceIcon} height={24} width={24} alt="behanceIcon" />
+                    </a>
                   </Link>
                 </div>
                 <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
-                  <Link href="https://github.com/jananadiw">
-                    <Image src={githubIcon} height={24} width={24} alt="githubicon" target="_blank" />
+                  <Link href="https://github.com/jananadiw" passHref>
+                    <a target="_blank">
+                      <Image src={githubIcon} height={24} width={24} alt="githubicon" />
+                    </a>
                   </Link>
                 </div>
               </div>

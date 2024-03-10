@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { s3Client } from '@/lib/s3Client';
 import { ListObjectsCommand } from '@aws-sdk/client-s3';
-import Art from './components/art';
+import Art from './components/Art';
 // import Artwork  from '../api/artwork.json'
 
 let artworkKeys: (string | undefined)[] = [];
@@ -17,11 +17,11 @@ async function fetchArtwork() {
   if (data.Contents) {
     artworkKeys = data.Contents?.map((item) => item.Key);
   }
-  return artworkKeys;
+  return artworkKeys.filter((key): key is string => typeof key === 'string');
 }
 
 export default function Home() {
-  const [allImages, setAllImages] = useState([]);
+  const [allImages, setAllImages] = useState<string[]>([]);
 
   useEffect(() => {
     fetchArtwork().then((images) => setAllImages(images));

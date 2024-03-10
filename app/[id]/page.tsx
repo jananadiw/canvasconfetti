@@ -6,8 +6,10 @@ import Link from 'next/link';
 
 export default function Page() {
   const pathname = usePathname();
-  const regex = /\/\d+_(.*?)\.jpg/;
-  const match = pathname.match(regex);
+  const artworkName = pathname
+    .replace(/\.[^/.]+$/, '')
+    .replace(/_/g, ' ')
+    .replace(/\d/g, '');
 
   // TODO:
   // if (match) {
@@ -21,12 +23,12 @@ export default function Page() {
         <div className="flex flex-col justify-center items-center">
           <div className="text-l font-raleway text-gray-600">
             {/* TODO: Fetch details from a database */}
-            <p>{match[1].replace(/_/g, ' ')} • Digital Art • A4 • $15.00</p>
+            <p>{artworkName} • Digital Art • A4 • $15.00</p>
           </div>
           <div className="mt-10">
             <Image
               src={`https://${process.env.NEXT_PUBLIC_AWS_BUCKET}.s3.ap-northeast-2.amazonaws.com${pathname}`}
-              alt={`img_${match}`}
+              alt={`img_${artworkName}`}
               width={550}
               height={600}
               style={{ pointerEvents: 'none' }}

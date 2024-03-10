@@ -1,7 +1,7 @@
 import '@/styles/globals.scss';
 import Head from 'next/head';
-import NavBar from './Components/navBar';
-import Footer from './Components/footer';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
