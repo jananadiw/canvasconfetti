@@ -1,3 +1,9 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import instagramIcon from '../../public/icons/insta.svg';
+import behanceIcon from '../../public/icons/bh.svg';
+import githubIcon from '../../public/icons/gh.svg';
+
 export default function About() {
   return (
     <>
@@ -21,6 +27,26 @@ export default function About() {
             </p>
 
             <p>Have questions? or advice for me? Find me from any of platforms below. 🙇🏻‍♀️👇🏼 </p>
+            <br />
+            <div className="mt-2 flex justify-center">
+              <div className="flex flex-row items-center w-48">
+                <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
+                  <Link href="https://www.instagram.com/canvas_confetti/">
+                    <Image src={instagramIcon} height={24} width={24} alt="instagramIcon" target="_blank" />
+                  </Link>
+                </div>
+                <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
+                  <Link href="https://www.behance.net/jayw25">
+                    <Image src={behanceIcon} height={24} width={24} alt="behanceIcon" target="_blank" />
+                  </Link>
+                </div>
+                <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
+                  <Link href="https://github.com/jananadiw">
+                    <Image src={githubIcon} height={24} width={24} alt="githubicon" target="_blank" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>

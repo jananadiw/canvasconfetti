@@ -1,14 +1,15 @@
-'use client'
+'use client';
 
+import { useState, useEffect } from 'react';
 import { s3Client } from '@/lib/s3Client';
 import { ListObjectsCommand } from '@aws-sdk/client-s3';
 import Art from './components/art';
-import { createClient, useQuery } from 'urql'
+// import Artwork  from '../api/artwork.json'
 
 let artworkKeys: (string | undefined)[] = [];
 
 const bucketParams = {
-  Bucket: `${process.env.AWS_BUCKET}`,
+  Bucket: process.env.NEXT_PUBLIC_AWS_BUCKET,
 };
 
 async function fetchArtwork() {
@@ -16,46 +17,16 @@ async function fetchArtwork() {
   if (data.Contents) {
     artworkKeys = data.Contents?.map((item) => item.Key);
   }
-  console.log(artworkKeys);
   return artworkKeys;
 }
 
-export default async function Home() {
-    // Prepare API key and Authorization header
-const headers: HeadersInit = {
-  'apikey': process.env.SUPABASE_ANON_KEY ?? '',
-  'Authorization': `Bearer ${process.env.SUPABASE_ANON_KEY ?? ''}`,
-}
+export default function Home() {
+  const [allImages, setAllImages] = useState([]);
 
-const client = createClient({
-  url: `${process.env.SUPABASE_URL}/graphql/v1`,
-  fetchOptions: {
-    headers: headers
-  }
-})
+  useEffect(() => {
+    fetchArtwork().then((images) => setAllImages(images));
+  }, []);
 
-const ArtworksQuery = `
-  query {
-    artworks {
-      edges {
-        node {
-          id
-          caption
-          url
-          name
-        }
-      }
-    }
-  }
-`
-
-const [result, reexecuteQuery] = useQuery({
-  query: ArtworksQuery,
-})
-
-const { data, fetching, error } = result;
-console.log('data', data);
-  const allImages = await fetchArtwork();
   return (
     <>
       <main>

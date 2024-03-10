@@ -1,15 +1,18 @@
 import '@/styles/globals.scss';
-import NavBar from './components/navbar';
-import Footer from './components/footer';
+import Head from 'next/head';
+import NavBar from './Components/navBar';
+import Footer from './Components/footer';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
+      <Head>
+        <title>Canvas Confetti</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Your page description" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body>
         <NavBar />
         {children}

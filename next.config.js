@@ -6,10 +6,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: process.env.ARTWORK_HOSTNAME_URL,
+        hostname: process.env.NEXT_PUBLIC_ARTWORK_HOSTNAME_URL,
       },
     ],
-    domains: ['s3.ap-northeast-2.amazonaws.com'],
   },
 };
 

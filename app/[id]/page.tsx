@@ -6,21 +6,30 @@ import Link from 'next/link';
 
 export default function Page() {
   const pathname = usePathname();
+  const regex = /\/\d+_(.*?)\.jpg/;
+  const match = pathname.match(regex);
+
+  // TODO:
+  // if (match) {
+  //   const extractedText = match[1].replace(/_/g, ' '); // Replace underscores with spaces
+  // } else {
+  //   console.log('No match found');
+  // }
   return (
     <>
       <main>
-        <div className="flex flex-col mx-80 px-10 justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
           <div className="text-l font-raleway text-gray-600">
             {/* TODO: Fetch details from a database */}
-            <p>Oh Coffee • Portrait • Digital Art • A4 • $15.00</p>
+            <p>{match[1].replace(/_/g, ' ')} • Digital Art • A4 • $15.00</p>
           </div>
           <div className="mt-10">
             <Image
-              // FIXME: Fetch bucket name from .env file
-              src={`https://janawcontent.s3.ap-northeast-2.amazonaws.com${pathname}`}
-              alt={`img_${pathname}`}
+              src={`https://${process.env.NEXT_PUBLIC_AWS_BUCKET}.s3.ap-northeast-2.amazonaws.com${pathname}`}
+              alt={`img_${match}`}
               width={550}
               height={600}
+              style={{ pointerEvents: 'none' }}
             />
           </div>
           <div className="basis-1/2 text-left self-end font-raleway px-10 leading-loose font-semibold mb-20">
