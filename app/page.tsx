@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { s3Client } from '@/lib/s3Client';
 import { ListObjectsCommand } from '@aws-sdk/client-s3';
-import Art from './components/Art';
+import Art from './components/art';
 // import Artwork  from '../api/artwork.json'
 
 let artworkKeys: (string | undefined)[] = [];
@@ -13,6 +13,7 @@ const bucketParams = {
 };
 
 async function fetchArtwork() {
+  console.log('s3Client', await s3Client);
   const data = await s3Client.send(new ListObjectsCommand(bucketParams));
   if (data.Contents) {
     artworkKeys = data.Contents?.map((item) => item.Key);

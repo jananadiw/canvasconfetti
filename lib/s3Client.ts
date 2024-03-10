@@ -7,6 +7,6 @@ const CREDENTIAL = {
 };
 
 // Create an Amazon S3 service client object.
-const s3Client = new S3Client([{ region: REGION, credentials: CREDENTIAL }]);
+const s3Client = new S3Client({ region: REGION, credentials: CREDENTIAL });
 
 export { s3Client };
