@@ -2,6 +2,7 @@ import '@/styles/globals.scss';
 import Head from 'next/head';
 import NavBar from './components/navbar';
 import Footer from './components/footer';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <NavBar />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
