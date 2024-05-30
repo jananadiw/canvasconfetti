@@ -19,7 +19,7 @@ export default function Art({ props }: any) {
             src={`https://janawcontent.s3.ap-northeast-2.amazonaws.com/${key}`}
             alt={`img_${key}`}
             width={400}
-            className=" w-full h-full object-cover rounded"
+            className="w-full h-full object-cover rounded"
             height={500}
             style={{ pointerEvents: 'none' }}
           />

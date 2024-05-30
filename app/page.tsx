@@ -13,7 +13,6 @@ const bucketParams = {
 };
 
 async function fetchArtwork() {
-  console.log('s3Client', await s3Client);
   const data = await s3Client.send(new ListObjectsCommand(bucketParams));
   if (data.Contents) {
     artworkKeys = data.Contents?.map((item) => item.Key);
@@ -32,7 +31,7 @@ export default function Home() {
     <>
       <main>
         {/* <NavBar /> */}
-        <div className="grid grid-cols-3 grid-rows-6 gap-5 mx-auto px-64">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-5 mx-auto px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64">
           {allImages.map((item, index) => {
             return <Art key={index} props={item} />;
           })}
