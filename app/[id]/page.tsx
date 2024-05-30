@@ -7,9 +7,12 @@ import Link from 'next/link';
 export default function Page() {
   const pathname = usePathname();
   const artworkName = pathname
-    .replace(/\.[^/.]+$/, '')
-    .replace(/_/g, ' ')
-    .replace(/\d/g, '');
+    .replace(/\.[^/.]+$/, '') // Remove the file extension
+    .replace(/_/g, ' ') // Replace underscores with spaces
+    .replace(/\d/g, '') // Remove all digits
+    .replace(/[^a-zA-Z\s]/g, ''); // Remove any character that is not a letter or space
+
+  console.log(artworkName);
 
   // TODO:
   // if (match) {
