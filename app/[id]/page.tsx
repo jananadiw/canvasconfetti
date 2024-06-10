@@ -26,7 +26,7 @@ export default function Page() {
         <div className="flex flex-col justify-center items-center">
           <div className="text-l font-raleway text-gray-600">
             {/* TODO: Fetch details from a database */}
-            <p>{artworkName} • Digital Art • A4 • $15.00</p>
+            <p>{artworkName} • Digital Art • A4</p>
           </div>
           <div className="mt-10">
             <Image
