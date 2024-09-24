@@ -31,24 +31,18 @@ export default function About() {
             <div className="mt-2 flex justify-center">
               <div className="flex flex-row items-center w-48">
                 <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
-                  <Link href="https://www.instagram.com/canvas_confetti/" passHref>
-                    <a target="_blank">
-                      <Image src={instagramIcon} height={24} width={24} alt="instagramIcon" loading="lazy" />
-                    </a>
+                  <Link href="https://www.instagram.com/canvas_confetti/" target="_blank" rel="noreferrer">
+                    <Image src={instagramIcon} height={24} width={24} alt="instagramIcon" loading="lazy" />
                   </Link>
                 </div>
                 <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
-                  <Link href="https://www.behance.net/jayw25" passHref>
-                    <a target="_blank">
-                      <Image src={behanceIcon} height={24} width={24} alt="behanceIcon" loading="lazy" />
-                    </a>
+                  <Link href="https://www.behance.net/jayw25" target="_blank" rel="noreferrer">
+                    <Image src={behanceIcon} height={24} width={24} alt="behanceIcon" loading="lazy" />
                   </Link>
                 </div>
                 <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
-                  <Link href="https://github.com/jananadiw" passHref>
-                    <a target="_blank">
-                      <Image src={githubIcon} height={24} width={24} alt="githubicon" loading="lazy" />
-                    </a>
+                  <Link href="https://github.com/jananadiw" target="_blank" rel="noreferrer">
+                    <Image src={githubIcon} height={24} width={24} alt="githubicon" loading="lazy" />
                   </Link>
                 </div>
               </div>
