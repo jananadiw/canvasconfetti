@@ -16,7 +16,7 @@ export default function NavBar() {
     <>
       <div className="flex flex-col mx-auto justify-center items-center w-full my-16 p-12 font-raleway bg-white sticky top-0 z-10">
         <div className="cursor-pointer">
-          <Image src={ccLogo} alt="logo_cc" width={300} height={200} />
+          <Image src={ccLogo} alt="logo_cc" width={300} height={200} loading="lazy" />
         </div>
         <div className="uppercase mt-2 mx-auto">
           <div className="flex justify-center items-center w-64">

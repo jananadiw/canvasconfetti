@@ -21,6 +21,7 @@ export default function Art({ props }: any) {
             width={400}
             className="w-full h-full object-cover rounded"
             height={500}
+            loading="lazy"
             style={{ pointerEvents: 'none' }}
           />
           <div className="justify-center items-center bg-light-beige absolute left-0 w-full absolute group-hover:h-full opacity-0 group-hover:opacity-100 h-0 top-0 duration-1000">

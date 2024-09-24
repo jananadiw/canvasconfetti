@@ -33,21 +33,21 @@ export default function About() {
                 <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
                   <Link href="https://www.instagram.com/canvas_confetti/" passHref>
                     <a target="_blank">
-                      <Image src={instagramIcon} height={24} width={24} alt="instagramIcon" />
+                      <Image src={instagramIcon} height={24} width={24} alt="instagramIcon" loading="lazy" />
                     </a>
                   </Link>
                 </div>
                 <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
                   <Link href="https://www.behance.net/jayw25" passHref>
                     <a target="_blank">
-                      <Image src={behanceIcon} height={24} width={24} alt="behanceIcon" />
+                      <Image src={behanceIcon} height={24} width={24} alt="behanceIcon" loading="lazy" />
                     </a>
                   </Link>
                 </div>
                 <div className="text-gray-900 hover:text-gray-300 w-1/3 text-center">
                   <Link href="https://github.com/jananadiw" passHref>
                     <a target="_blank">
-                      <Image src={githubIcon} height={24} width={24} alt="githubicon" />
+                      <Image src={githubIcon} height={24} width={24} alt="githubicon" loading="lazy" />
                     </a>
                   </Link>
                 </div>

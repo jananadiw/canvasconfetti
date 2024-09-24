@@ -34,6 +34,7 @@ export default function Page() {
               alt={`img_${artworkName}`}
               width={550}
               height={600}
+              loading="lazy"
               style={{ pointerEvents: 'none' }}
             />
           </div>
