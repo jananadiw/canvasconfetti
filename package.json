@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.264.0",
-    "@supabase/supabase-js": "^2.11.0",
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
+    "@supabase/supabase-js": "^2.45.4",
     "@vercel/analytics": "^1.2.2",
     "eslint-config-next": "13.1.6",
     "graphql": "^16.6.0",

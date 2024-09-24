@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { s3Client } from '@/lib/s3Client';
+import { s3Client } from '@/utils/s3Client';
 import { ListObjectsCommand } from '@aws-sdk/client-s3';
 import Art from './components/art';
 // import Artwork  from '../api/artwork.json'
