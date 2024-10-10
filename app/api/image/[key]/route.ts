@@ -1,26 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GetObjectCommand } from '@aws-sdk/client-s3';
-import { Readable } from 'stream';
-import { s3Client } from '@/lib/s3Client';
+import fs from 'fs';
+import path from 'path';
 
 export async function GET(request: NextRequest, { params }: { params: { key: string } }) {
   const { key } = params;
 
   try {
-    const command = new GetObjectCommand({
-      Bucket: process.env.NEXT_PUBLIC_AWS_BUCKET,
-      Key: key,
-    });
+    const filePath = path.join(process.cwd(), 'public', 'images', key);
+    const fileBuffer = fs.readFileSync(filePath);
 
-    const { Body, ContentType } = await s3Client.send(command);
+    const response = new NextResponse(fileBuffer);
 
-    if (!(Body instanceof Readable)) {
-      throw new Error('Invalid stream');
-    }
+    // Determine content type based on file extension
+    const ext = path.extname(key).toLowerCase();
+    let contentType = 'application/octet-stream';
+    if (ext === '.jpg' || ext === '.jpeg') contentType = 'image/jpeg';
+    else if (ext === '.png') contentType = 'image/png';
+    else if (ext === '.gif') contentType = 'image/gif';
 
-    const response = new NextResponse(Body as ReadableStream);
-
-    response.headers.set('Content-Type', ContentType || 'image/jpeg');
+    response.headers.set('Content-Type', contentType);
     response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
 
     return response;
