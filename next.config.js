@@ -9,6 +9,7 @@ const nextConfig = {
         hostname: process.env.NEXT_PUBLIC_ARTWORK_HOSTNAME_URL,
       },
     ],
+    domains: ['localhost'],
   },
 };
 

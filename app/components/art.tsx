@@ -11,7 +11,7 @@ export default function Art({ props }: { props: string }) {
     <Link href={`/${encodeURIComponent(props)}`}>
       <div className="group relative h-full">
         <Image
-          src={`/api/image/${encodeURIComponent(props)}`}
+          src={`/images/${encodeURIComponent(props)}`}
           alt={`img_${artworkName}`}
           width={400}
           height={500}
